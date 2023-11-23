@@ -78,6 +78,13 @@ public class Servidor {
                 mensajeBarco2 = leerMensaje(sBarco2);
             } while (!mensajeBarco1.equals(mensajeBarco2) || !mensajeBarco1.equals(Acciones.SALIR.toString()));
             System.out.println("Ya pasaron 2 barcos, continuar...");
+            try {
+                sBarco1.close();
+                sBarco2.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
         }
     }
 

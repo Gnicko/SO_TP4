@@ -52,8 +52,8 @@ public class Cliente implements Runnable {
                 Thread.sleep(2000);
 
                 enviarMensaje(Acciones.SALIR.toString());
+                socket.close();
                 ubicacion = Ubicacion.cambiarUbicacion(ubicacion);//cambia de sentido y intenta cruzar desde el otro extremo
-
 
             }
         } catch (IOException | InterruptedException e) {
